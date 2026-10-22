@@ -1,6 +1,12 @@
-# Monocular Depth and Object Detection on NVIDIA Jetson
+# YOLO26: Object Detection & Monocular Depth
 
-Video-based object detection and monocular depth estimation using YOLO26 on NVIDIA Jetson.
+Combining neural object detection with depth estimation from RGB video on NVIDIA Jetson.
+
+**YOLO26 object detection, monocular depth inference and spatial annotations in a GPU-accelerated video pipeline.**
+
+The implementation combines object bounding boxes with depth estimates from a second neural network. It analyzes depth values within detected regions and generates annotated video and depth visualizations.
+
+Depth is inferred from RGB frames rather than obtained from a hardware depth sensor.
 
 ## Overview
 
@@ -38,6 +44,14 @@ The depth model requires a compatible Ultralytics implementation.
 
 Model checkpoints are not included in Git.
 
+## Engineering Highlights
+
+- YOLO26 object detection and monocular depth estimation.
+- GPU inference with complementary computer vision models.
+- Region-based depth sampling with invalid-value filtering.
+- Annotated video generation and depth visualization.
+- Explicit separation of estimated depth from measured distance.
+
 ## Requirements
 
 - NVIDIA Jetson Orin Nano Super 8 GB
@@ -74,7 +88,3 @@ Estimated depth must not be treated as a validated physical distance measurement
 - Estimated depth accuracy has not been independently validated.
 - Performance depends on scene geometry and model generalization.
 - No verified live camera FPS or depth accuracy result is claimed.
-
-## Project Scope
-
-Monocular depth estimation, object detection, GPU inference, video processing and spatial visualization.
